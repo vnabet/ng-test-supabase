@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SupabaseService } from './services/supabase.service';
 
 @Component({
   selector: 'app-root',
