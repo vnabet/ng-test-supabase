@@ -37,10 +37,20 @@ export class SupabaseService {
   }
 
   profile(user: User) {
+    console.log(user);
     return this.supabase
       .from('profiles')
       .select(`username, website, avatar_url`)
       .eq('id', user.id)
+      .single()
+  }
+
+  profile2(id:string = '33a45374-e9c3-4a78-8cfb-4f36f2483f7c') {
+
+    return this.supabase
+      .from('profiles')
+      .select(`username, website, avatar_url`)
+      .eq('id', id)
       .single()
   }
 

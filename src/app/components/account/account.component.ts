@@ -84,8 +84,14 @@ export class AccountComponent implements OnInit {
     }
   }
 
+
   async signOut() {
     await this.supabase.signOut()
+  }
+
+  async profile2() {
+    const {data} = await this.supabase.profile2();
+    console.log('PROFILE', data);
   }
 
 }

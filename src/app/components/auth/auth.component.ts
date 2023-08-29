@@ -36,4 +36,9 @@ export class AuthComponent {
     }
   }
 
+  async profile2() {
+    const {data} = await this.supabase.profile2();
+    console.log('PROFILE', data);
+  }
+
 }
