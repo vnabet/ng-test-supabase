@@ -7,5 +7,13 @@ import { SupabaseService } from './services/supabase.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   title = 'ng-test-supabase';
+  session = this.supabase.session
+
+  constructor(private readonly supabase: SupabaseService) {}
+
+  ngOnInit() {
+    this.supabase.authChanges((_, session) => (this.session = session))
+  }
 }
